@@ -1,0 +1,20 @@
+#accordion{
+    width: 90vw;
+    margin-left: auto;
+    margin-right:auto;
+}
+
+
+.list{
+    float: left;
+    width: 300px;
+    margin-left: 10px;
+}
+.list-body{
+    overflow: scroll;
+    height: 400px;
+}
+
+.task{
+    margin-bottom: 10px;
+}
