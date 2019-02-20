@@ -11,10 +11,19 @@
 |
 */
 Auth::routes();
+//route fix
+Route::get('/home',function(){
+    return redirect('/');
+});
 
 //list routes
+
 Route::get('/', 'TaskListController@index')->name('home');
+Route::get('/create', 'TaskListController@create')->name('list.create');
 Route::get('/{TaskList}', 'TaskListController@show')->name('list.show');
+
+
+
 
 
 

@@ -18,9 +18,14 @@ class TaskListController extends Controller
      */
     public function index()
     {
-        $lists = Tasklist::where('user_id', 1)->get();
-        dd($lists);
-        return view('home.index', ['lists' => Tasklist::where('user_id', 1),'tasks' => task::all()]);
+        if(isset(auth()->user()->id)){
+
+            $lists = Tasklist::where('user_id', auth()->user()->id )->get();
+            return view('home.index', ['lists' => $lists ,'tasks' => task::all()]);
+        }
+        else{
+            return redirect('/login');
+        }
 
     }
 
@@ -31,7 +36,8 @@ class TaskListController extends Controller
      */
     public function create()
     {
-        //
+
+        return view('home.create');
     }
 
     /**
